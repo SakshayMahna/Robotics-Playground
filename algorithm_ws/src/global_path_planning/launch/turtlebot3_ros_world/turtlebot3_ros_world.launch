@@ -1,0 +1,30 @@
+<launch>
+  <!-- Arguments -->
+  <arg name="model" default="burger"/>
+  <arg name="open_rviz" default="true"/>
+  <arg name="map_file" default="$(find ros_world)/maps/map.yaml"/>
+  <arg name="move_forward_only" default="false"/>
+
+  <!-- rviz -->
+  <arg name="rvizconfig" default="$(find global_path_planning)/rviz/turtlebot3_ros_world.rviz"/>
+  <node if="$(arg open_rviz)" name="rviz" pkg="rviz" type="rviz" respawn="false" args="-d $(arg rvizconfig)"/>
+
+  <!-- Map server -->
+  <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)">
+    <param name="frame_id" value="odom" />
+  </node>
+
+  <!-- Static tf between map and odom -->
+  <arg name="static_tf" default="true" />
+  <node if="$(arg static_tf)" pkg="tf2_ros" type="static_transform_publisher" name="odom_wrt_map_tf" args="0 0 0 0 0 0 map odom" />
+
+  <!-- move_base -->
+  <include file="$(find global_path_planning)/launch/turtlebot3_ros_world/move_base.launch">
+    <arg name="model" value="$(arg model)" />
+    <arg name="move_forward_only" value="$(arg move_forward_only)"/>
+  </include>
+
+  <!-- Start service server that responds with a plan for global path planning -->
+  <node pkg="global_path_planning" name="global_path_planner" type="path_planning_server.py" output="screen"/> 
+
+</launch>

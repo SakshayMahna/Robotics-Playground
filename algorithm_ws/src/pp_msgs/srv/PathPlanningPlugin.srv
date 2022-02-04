@@ -1,0 +1,7 @@
+int32[] costmap_ros
+int32 width
+int32 height
+int32 start
+int32 goal 
+---
+int32[] plan
