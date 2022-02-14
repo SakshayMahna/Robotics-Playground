@@ -8,7 +8,7 @@ def find_neighbors(index, width, height, costmap, orthogonal_step_cost):
   # length of diagonal = length of one side by the square root of 2 (1.41421)
   diagonal_step_cost = orthogonal_step_cost * 1.41421
   # threshold value used to reject neighbor nodes as they are considered as obstacles [1-254]
-  lethal_cost = 90
+  lethal_cost = 150
 
   upper = index - width
   if upper > 0:

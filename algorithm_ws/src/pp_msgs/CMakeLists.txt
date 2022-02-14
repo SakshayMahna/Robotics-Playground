@@ -12,6 +12,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  trajectory_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -58,6 +59,7 @@ find_package(catkin REQUIRED COMPONENTS
 add_service_files(
   FILES
   PathPlanningPlugin.srv
+  MoveItPlugin.srv
 )
 
 ## Generate actions in the 'action' folder
@@ -71,6 +73,7 @@ add_service_files(
 generate_messages(
   DEPENDENCIES
   std_msgs
+  trajectory_msgs
 )
 
 ################################################

@@ -1,6 +1,7 @@
 #! /usr/bin/env python
 
 import rospy
+from math import sqrt
 from algorithms.neighbors import find_neighbors
 
 def euclidean_distance(index, goal_index, width):
@@ -11,7 +12,7 @@ def euclidean_distance(index, goal_index, width):
   goal_y = int(goal_index / width)
 
   distance = (index_x - goal_x) ** 2 + (index_y - goal_y) ** 2
-  return distance
+  return sqrt(distance)
 
 def astar(start_index, goal_index, width, height, costmap, resolution, origin, grid_viz):
   ''' 

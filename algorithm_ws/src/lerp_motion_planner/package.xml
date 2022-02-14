@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>lerp_motion_planner</name>
+  <version>1.2.5</version>
+  <description>
+    Linear Interpolation based Motion Planner
+  </description>
+  <license>BSD</license>
+  <maintainer email="sakshum19@gmail.com">Sakshay Mahna</maintainer>
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>pluginlib</build_depend>
+  <build_depend>eigen</build_depend>
+  <build_depend>moveit_core</build_depend>
+  <build_depend>moveit_ros_planning</build_depend>
+  <build_depend>moveit_ros_planning_interface</build_depend>
+  <build_depend>moveit_ros_perception</build_depend>
+  <build_depend>interactive_markers</build_depend>
+  <build_depend>geometric_shapes</build_depend>
+  <build_depend>moveit_visual_tools</build_depend>
+  <build_depend>rviz_visual_tools</build_depend>
+  <build_depend>rosbag</build_depend>
+  <build_depend>tf2_ros</build_depend>
+  <build_depend>tf2_eigen</build_depend>
+  <build_depend>tf2_geometry_msgs</build_depend>
+  <build_depend>pp_msgs</build_depend>
+
+  <exec_depend>pluginlib</exec_depend>
+  <exec_depend>moveit_core</exec_depend>
+  <exec_depend>moveit_commander</exec_depend>
+  <exec_depend>moveit_fake_controller_manager</exec_depend>
+  <exec_depend>moveit_ros_planning_interface</exec_depend>
+  <exec_depend>moveit_ros_perception</exec_depend>
+  <exec_depend>interactive_markers</exec_depend>
+  <exec_depend>moveit_visual_tools</exec_depend>
+  <exec_depend>rviz_visual_tools</exec_depend>
+  <exec_depend>joint_state_publisher</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>rosbag</exec_depend>
+  <exec_depend>rviz</exec_depend>
+  <exec_depend>tf2_ros</exec_depend>
+  <exec_depend>tf2_eigen</exec_depend>
+  <exec_depend>tf2_geometry_msgs</exec_depend>
+  <exec_depend>xacro</exec_depend>
+  <exec_depend>nodelet</exec_depend>
+  <exec_depend>gazebo_ros</exec_depend>
+  <exec_depend>pp_msgs</exec_depend>
+
+  <export>
+    <moveit_core plugin="${prefix}/lerp_interface_plugin_description.xml"/>
+  </export>
+</package>
