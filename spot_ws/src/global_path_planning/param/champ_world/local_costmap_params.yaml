@@ -1,0 +1,15 @@
+local_costmap:
+   global_frame: odom
+   robot_base_frame: base_footprint
+   update_frequency: 5.0
+   publish_frequency: 2.0
+   rolling_window: true
+   width: 4.0
+   height: 4.0
+   resolution: 0.1
+   transform_tolerance: 0.5
+   inflation_layer: {cost_scaling_factor: 10.0, enabled: true, inflation_radius: 0.0, robot_radius: 0.15}
+   inflation_radius: 0.0 # overrides setting in costmap_common_params.yaml
+   plugins:
+    - {name: obstacle_layer,      type: "costmap_2d::VoxelLayer"}
+    - {name: inflation_layer,     type: "costmap_2d::InflationLayer"}

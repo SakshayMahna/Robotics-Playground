@@ -1,0 +1,14 @@
+global_costmap:
+   global_frame: map
+   robot_base_frame: base_footprint
+   update_frequency: 0.2 #1.0
+   publish_frequency: 0.2
+   transform_tolerance: 0.5
+
+# uncomment to remove the need for an a priori map
+#   plugins: []
+
+   plugins:
+     - {name: static_layer,            type: "costmap_2d::StaticLayer"}
+     - {name: inflation_layer,         type: "costmap_2d::InflationLayer"}
+
