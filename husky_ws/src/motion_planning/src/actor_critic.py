@@ -75,24 +75,41 @@ class Actor:
             name="a_lr_0",
             kernel_initializer=RandomUniform(-w_range, w_range),
         )(obs_input)
+        lr_0b = keras.layers.BatchNormalization()(lr_0)
+        lr_0a = keras.layers.Activation("relu")(lr_0b)
 
         # layer 1
         w_range = 1 / np.sqrt(400.0)
         lr_1 = keras.layers.Dense(
             300,
-            activation="relu",
             name="a_lr_1",
             kernel_initializer=RandomUniform(-w_range, w_range),
-        )(lr_0)
+        )(lr_0a)
+        lr_1b = keras.layers.BatchNormalization()(lr_1)
+        lr_1a = keras.layers.Activation("relu")(lr_1b)
+
+        # action layer - linear
+        w_range = 0.003
+        action_linear = self.action_gain * keras.layers.Dense(
+            self.action_dim,
+            name="action_linear",
+            kernel_initializer=RandomUniform(-w_range, w_range),
+        )(lr_1a)
+        action_linear_b = keras.layers.BatchNormalization()(action_linear)
+        action_linear_a = keras.layers.Activation("sigmoid")(action_linear_b)
+
+        # action layer - angular
+        w_range = 0.003
+        action_angular = self.action_gain * keras.layers.Dense(
+            self.action_dim,
+            name="action_angular",
+            kernel_initializer=RandomUniform(-w_range, w_range),
+        )(lr_1a)
+        action_angular_b = keras.layers.BatchNormalization()(action_angular)
+        action_angular_a = keras.layers.Activation("tanh")(action_angular_b)
 
         # action layer
-        w_range = 0.003
-        action = self.action_gain * keras.layers.Dense(
-            self.action_dim,
-            activation="tanh",
-            name="action",
-            kernel_initializer=RandomUniform(-w_range, w_range),
-        )(lr_1)
+        action = keras.layers.Concatenate()([action_linear_a, action_angular_a])
 
         model = keras.Model(inputs=obs_input, outputs=action)
         return model

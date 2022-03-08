@@ -1,0 +1,3 @@
+[submodule "Frenet_Planner_AGV"]
+	path = Frenet_Planner_AGV
+	url = https://github.com/anime-sh/Frenet_Planner_AGV.git
