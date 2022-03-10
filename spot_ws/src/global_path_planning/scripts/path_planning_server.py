@@ -4,9 +4,6 @@ import rospy
 from pp_msgs.srv import PathPlanningPlugin, PathPlanningPluginResponse
 from geometry_msgs.msg import Twist
 from gridviz import GridViz
-from algorithms.dijkstra import dijkstra
-from algorithms.astar import astar
-from algorithms.greedy import greedy
 from algorithms.rrt import rrt
 from algorithms.prm import prm
 
