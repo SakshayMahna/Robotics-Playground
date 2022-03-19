@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <arg name="model" default="$(find f1_gazebo)/models/f1_renault_laser/model.urdf"/>
+  <arg name="rvizconfig" default="$(find f1_gazebo)/rviz/config.rviz" />
+
+  <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find f1_gazebo)/worlds/simple_circuit.world"/> <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="false"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+    <arg name="verbose" default="false"/>
+  </include>
+
+  <param name="robot_description" textfile="$(arg model)"/>
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" />
+  <node pkg="fake_localization" type="fake_localization" name="fake_localization" />
+  <!-- <node pkg="tf2_ros" type="static_transform_publisher" name="very_inaccurate_odom" args="0 0 0 0 0 0 odom f1_renault__f1"/> -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
+</launch>
