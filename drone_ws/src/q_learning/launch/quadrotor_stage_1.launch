@@ -1,0 +1,21 @@
+<launch>
+  <arg name="x_pos" default="0.0"/>
+  <arg name="y_pos" default="0.0"/>
+  <arg name="z_pos" default="0.0"/>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find q_learning)/worlds/turtlebot3_stage_1.world"/>
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>  
+
+  <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor_with_laser.launch">
+    <arg name="x" value="$(arg x_pos)"/>
+    <arg name="y" value="$(arg y_pos)"/>
+    <arg name="z" value="$(arg z_pos)"/>
+  </include>
+
+</launch>

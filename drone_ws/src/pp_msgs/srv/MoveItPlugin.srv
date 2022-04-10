@@ -1,0 +1,5 @@
+string[] joint_names
+float64[] start_joint
+float64[] goal_joint
+---
+trajectory_msgs/JointTrajectory plan 

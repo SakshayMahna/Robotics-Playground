@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<launch>
+  <arg name="world" default="$(find q_learning)/worlds/train_world1.world"/>
+  <arg name="args" default=""/>
+  <arg name="gui" default="true"/>
+  
+  <param name="/use_sim_time" value="true" />
+  <node name="gazebo" pkg="gazebo_ros" type="gzserver" args="$(arg world) $(arg args)" respawn="false" output="screen"/>
+  <group if="$(arg gui)">
+    <node name="gazebo_gui" pkg="gazebo_ros" type="gzclient" respawn="false" output="screen"/>
+  </group>
+
+  <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor_with_laser.launch" />
+</launch>

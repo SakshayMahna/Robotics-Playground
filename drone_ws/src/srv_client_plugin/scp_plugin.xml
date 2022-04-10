@@ -1,0 +1,16 @@
+<!-- Plugin description file -->
+<!-- Path to the plugin library. In this case, the path is lib/libcarrot_planner, where lib is the folder in the directory ~/catkin_ws/devel/ -->
+<!-- <library path="lib/libcarrot_planner"> -->
+
+<library path="lib/libsrv_client_plugin">
+  <!-- Name defines how the plugin has to be called on the move_base launch file in order to be used in nav_core -->
+  <!-- example: <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+                <param name="base_global_planner" value="carrot_planner/CarrotPlanner"/>       -->
+  <!-- Type specifies the name the class that implements the plugin which is in our case global_planner::GlobalPlanner -->
+  <!-- base_class_type specifies the name the base class that implements the plugin which is in our case nav_core::BaseGlobalPlanner -->
+  <class name="srv_client_plugin/SrvClientPlugin" type="srv_client_plugin::SrvClientPlugin" base_class_type="nav_core::BaseGlobalPlanner">
+    <description>
+      A global planner plugin that creates service request to get a plan and forwards the response to the move_base global planner module.
+    </description>
+  </class>
+</library>
