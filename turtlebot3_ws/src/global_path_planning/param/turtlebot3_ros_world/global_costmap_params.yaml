@@ -4,11 +4,8 @@ global_costmap:
    update_frequency: 0.2 #1.0
    publish_frequency: 0.2
    transform_tolerance: 0.5
+   static_map: true
 
 # uncomment to remove the need for an a priori map
 #   plugins: []
-
-   plugins:
-     - {name: static_layer,            type: "costmap_2d::StaticLayer"}
-     - {name: inflation_layer,         type: "costmap_2d::InflationLayer"}
 

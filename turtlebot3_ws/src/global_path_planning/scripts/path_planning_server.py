@@ -33,7 +33,7 @@ def make_plan(req):
   start_time = rospy.Time.now()
 
   # calculate the shortes path
-  path = q_learning(start_index, goal_index, width, height, costmap, resolution, origin, viz)
+  path = astar(start_index, goal_index, width, height, costmap, resolution, origin, viz)
 
   if not path:
     rospy.logwarn("No path returned by the path algorithm")

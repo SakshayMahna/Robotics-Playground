@@ -7,6 +7,39 @@ footprint: [[-0.105, -0.105], [-0.105, 0.105], [0.041, 0.105], [0.041, -0.105]]
 inflation_radius: 1.0
 cost_scaling_factor: 3.0
 
+obstacle_layer:
+  enabled:              true
+  max_obstacle_height:  0.6
+  origin_z:             0.0
+  z_resolution:         0.2
+  z_voxels:             10
+  unknown_threshold:    15
+  mark_threshold:       0
+  combination_method:   1
+  track_unknown_space:  true    #true needed for disabling global path planning through unknown space
+  obstacle_range: 5.5
+  raytrace_range: 6.0
+  origin_z: 0.0
+  #z_resolution: 0.2
+  #z_voxels: 2
+  publish_voxel_map: false
+  observation_sources:  scan #bump
+  scan: {data_type: LaserScan, topic: scan, marking: true, clearing: true, inf_is_valid: true}
+  #bump:
+    #data_type: PointCloud2
+    #topic: mobile_base/sensors/bumper_pointcloud
+    #marking: true
+    #clearing: false
+    #min_obstacle_height: 0.0
+    #max_obstacle_height: 0.15
+  # for debugging only, let's you see the entire voxel grid
+
+#cost_scaling_factor and inflation_radius were now moved to the inflation_layer ns
+inflation_layer:
+  enabled:              true
+  cost_scaling_factor:  5.0  # exponential rate at which the obstacle cost drops off (default: 10)
+  inflation_radius:     0.4  # max. distance from an obstacle at which costs are incurred for planning paths.
+
 map_type: costmap
 observation_sources: scan
 scan: {sensor_frame: base_scan, data_type: LaserScan, topic: scan, marking: true, clearing: true}
