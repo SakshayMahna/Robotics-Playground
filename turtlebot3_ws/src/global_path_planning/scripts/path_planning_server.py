@@ -8,12 +8,17 @@ from algorithms.dijkstra import dijkstra
 from algorithms.astar import astar
 from algorithms.greedy import greedy
 from algorithms.q_learning import q_learning
+from algorithms.lpastar import lpastar
+
+previous_plan_variables = None
 
 def make_plan(req):
   ''' 
   Callback function used by the service server to process
   requests from clients. It returns a msg of type PathPlanningPluginResponse
   ''' 
+  global previous_plan_variables
+
   # costmap as 1-D array representation
   costmap = req.costmap_ros
   # number of columns in the occupancy grid
@@ -33,7 +38,7 @@ def make_plan(req):
   start_time = rospy.Time.now()
 
   # calculate the shortes path
-  path = astar(start_index, goal_index, width, height, costmap, resolution, origin, viz)
+  path, previous_plan_variables = lpastar(start_index, goal_index, width, height, costmap, resolution, origin, viz, previous_plan_variables)
 
   if not path:
     rospy.logwarn("No path returned by the path algorithm")

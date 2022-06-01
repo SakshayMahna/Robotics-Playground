@@ -1,0 +1,32 @@
+<launch>
+  <!-- Arguments -->
+  <arg name="model" default="burger"/>
+  <arg name="cmd_vel_topic" default="/cmd_ve" />
+  <arg name="scan_topic" default="/scan"/>
+  <arg name="odom_topic" default="/odom" />
+  <arg name="move_forward_only" default="false"/>
+
+  <!-- Planners -->
+  <arg name="base_global_planner" default="srv_client_plugin/SrvClientPlugin"/>
+  <arg name="base_local_planner" default="dwa_local_planner/DWAPlannerROS"/>
+
+  <!-- move_base -->
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS" />
+    <rosparam file="$(find global_path_planning)/param/turtlebot3_ros_world/costmap_common_params_$(arg model).yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find global_path_planning)/param/turtlebot3_ros_world/costmap_common_params_$(arg model).yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find global_path_planning)/param/turtlebot3_ros_world/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find global_path_planning)/param/turtlebot3_ros_world/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find global_path_planning)/param/turtlebot3_ros_world/move_base_replan_params.yaml" command="load" />
+    <rosparam file="$(find global_path_planning)/param/turtlebot3_ros_world/dwa_local_planner_params_$(arg model).yaml" command="load" />
+    <rosparam file="$(find global_path_planning)/param/turtlebot3_ros_world/global_planner_params.yaml" command="load" />
+    <rosparam file="$(find global_path_planning)/param/turtlebot3_ros_world/navfn_global_planner_params.yaml" command="load" />
+
+    <remap from="cmd_vel" to="$(arg cmd_vel_topic)"/>
+    <remap from="odom" to="$(arg odom_topic)"/>
+    <remap from="scan" to="$(arg scan_topic)"/>
+
+    <param name="base_global_planner" value="$(arg base_global_planner)"/>
+    <param name="base_local_planner" value="$(arg base_local_planner)"/> 
+  </node>
+</launch>

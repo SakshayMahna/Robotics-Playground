@@ -12,7 +12,7 @@ Usage: roslaunch unit2_pp unit2_solution.launch
 import rospy
 from algorithms.neighbors import find_neighbors
 
-def dijkstra(start_index, goal_index, width, height, costmap, resolution, origin, grid_viz):
+def dijkstra(start_index, goal_index, width, height, costmap, resolution, origin, grid_viz, previous_plan_variables):
   ''' 
   Performs Dijkstra's shortes path algorithm search on a costmap with a given start and goal node
   '''
@@ -117,5 +117,5 @@ def dijkstra(start_index, goal_index, width, height, costmap, resolution, origin
   shortest_path = shortest_path[::-1]
   rospy.loginfo('Dijkstra: Done reconstructing path')
 
-  return shortest_path
+  return shortest_path, None
 

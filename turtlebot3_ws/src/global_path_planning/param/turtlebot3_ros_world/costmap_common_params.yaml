@@ -21,7 +21,7 @@ obstacle_layer:
   #z_voxels: 2
   publish_voxel_map: false
   observation_sources:  scan #bump
-  scan: {data_type: LaserScan, topic: kobuki/laser/scan, marking: true, clearing: true, inf_is_valid: true}
+  scan: {data_type: LaserScan, topic: /scan, marking: true, clearing: true, inf_is_valid: true}
   #bump:
     #data_type: PointCloud2
     #topic: mobile_base/sensors/bumper_pointcloud

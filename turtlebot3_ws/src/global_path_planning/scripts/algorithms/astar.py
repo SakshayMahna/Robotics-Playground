@@ -14,7 +14,7 @@ def euclidean_distance(index, goal_index, width):
   distance = (index_x - goal_x) ** 2 + (index_y - goal_y) ** 2
   return sqrt(distance)
 
-def astar(start_index, goal_index, width, height, costmap, resolution, origin, grid_viz):
+def astar(start_index, goal_index, width, height, costmap, resolution, origin, grid_viz, previous_plan_variables):
   ''' 
   Performs A Star shortest path algorithm search on a costmap with a given start and goal node
   '''
@@ -128,5 +128,5 @@ def astar(start_index, goal_index, width, height, costmap, resolution, origin, g
   shortest_path = shortest_path[::-1]
   rospy.loginfo('AStar: Done reconstructing path')
 
-  return shortest_path
+  return shortest_path, None
 

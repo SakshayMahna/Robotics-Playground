@@ -161,7 +161,7 @@ def get_final_positions(start_index, goal_index, width, q_table):
         
     return indices
 
-def q_learning(start_index, goal_index, width, height, costmap, resolution, origin, grid_viz):
+def q_learning(start_index, goal_index, width, height, costmap, resolution, origin, grid_viz, previous_plan_variables):
     ''' 
     Uses Q Learning Algorithm to find a path from start to goal
     '''
@@ -198,4 +198,4 @@ def q_learning(start_index, goal_index, width, height, costmap, resolution, orig
     for index in indices:
         grid_viz.set_color(index,'orange')
 
-    return indices
+    return indices, None
