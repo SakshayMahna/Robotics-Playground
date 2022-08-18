@@ -19,6 +19,10 @@ Initialize git submodules:
     cd Robotics-Playground
     git submodule init
     git submodule update
+    
+Install ROS dependency from a certain ws:
+    cd <ws>
+    rosdep install --from-paths src --ignore-src -r -y
 
 Change permission for python scripts:
 
