@@ -17,12 +17,11 @@ Instructions to run the simulation are in the respective workspace directory
 Initialize git submodules:
 
     cd Robotics-Playground
-    git submodule init
-    git submodule update
+    git submodule update --init --recursive
     
 Install ROS dependency from a certain ws:
 
-    cd <ws>
+    cd <certain_ws>
     rosdep install --from-paths src --ignore-src -r -y
 
 Change permission for python scripts:
