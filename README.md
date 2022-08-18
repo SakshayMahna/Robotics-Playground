@@ -18,3 +18,8 @@ Change permission for python scripts:
 
     cd Robotics-Playground
     find . -name *.py -exec chmod +x {} \;
+    
+To let git ignore permission changes:
+
+    cd Robotics-Playground
+    git config core.fileMode false
