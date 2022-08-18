@@ -22,6 +22,13 @@ catkin_make
 source devel/setup.bash
 ```
 
+3. Download robot configs
+
+```bash
+cd/src/robots
+./install_descriptions
+```
+
 3. Start the Spot simulation, and keep the terminal running. The Gazebo window showing the Spot Robot in an environment would open.
 
 ```bash
