@@ -14,12 +14,18 @@ Instructions to run the simulation are in the respective workspace directory
 | `spot_ws`  | RRT | [Link](https://youtu.be/_KD_2IsWslM) |
 | `driving_ws` | Frenet Frames | [Link](https://youtu.be/DhP3jiC9YX0) |
 
+Initialize git submodules:
+
+    cd Robotics-Playground
+    git submodule init
+    git submodule update
+
 Change permission for python scripts:
 
     cd Robotics-Playground
     find . -name *.py -exec chmod +x {} \;
     
-To let git ignore permission changes:
+To let git ignore permission changes within the repo:
 
     cd Robotics-Playground
     git config core.fileMode false
