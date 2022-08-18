@@ -1,0 +1,54 @@
+[submodule "spot_ws/src/spot_ros"]
+	path = spot_ws/src/spot_ros
+	url = git@github.com:clearpathrobotics/spot_ros.git
+[submodule "spot_ws/src/champ"]
+	path = spot_ws/src/champ
+	url = git@github.com:chvmp/champ.git
+[submodule "spot_ws/src/champ_teleop"]
+	path = spot_ws/src/champ_teleop
+	url = git@github.com:chvmp/champ_teleop.git
+[submodule "spot_ws/src/yocs_velocity_smoother"]
+	path = spot_ws/src/yocs_velocity_smoother
+	url = git@github.com:chvmp/yocs_velocity_smoother.git
+[submodule "baxter_ws/src/baxter_common"]
+	path = baxter_ws/src/baxter_common
+	url = git@github.com:RethinkRobotics/baxter_common.git
+[submodule "baxter_ws/src/baxter_examples"]
+	path = baxter_ws/src/baxter_examples
+	url = git@github.com:RethinkRobotics/baxter_examples.git
+[submodule "baxter_ws/src/baxter_interface"]
+	path = baxter_ws/src/baxter_interface
+	url = git@github.com:RethinkRobotics/baxter_interface.git
+[submodule "baxter_ws/src/baxter_simulator"]
+	path = baxter_ws/src/baxter_simulator
+	url = git@github.com:RethinkRobotics/baxter_simulator.git
+[submodule "baxter_ws/src/baxter_tools"]
+	path = baxter_ws/src/baxter_tools
+	url = git@github.com:RethinkRobotics/baxter_tools.git
+[submodule "baxter_ws/src/baxter_moveit_experiments"]
+	path = baxter_ws/src/baxter_moveit_experiments
+	url = git@github.com:anthonysimeonov/baxter_moveit_experiments.git
+[submodule "drone_ws/src/unique_identifier"]
+	path = drone_ws/src/unique_identifier
+	url = git@github.com:ros-geographic-info/unique_identifier.git
+[submodule "drone_ws/src/hector_quadrotor_noetic"]
+	path = drone_ws/src/hector_quadrotor_noetic
+	url = git@github.com:RAFALAMAO/hector-quadrotor-noetic.git
+[submodule "drone_ws/src/geographic_info"]
+	path = drone_ws/src/geographic_info
+	url = git@github.com:ros-geographic-info/geographic_info.git
+[submodule "f1_ws/src/pysdf"]
+	path = f1_ws/src/pysdf
+	url = git@github.com:andreasBihlmaier/pysdf.git
+[submodule "husky_ws/src/husky"]
+	path = husky_ws/src/husky
+	url = git@github.com:husky/husky.git
+[submodule "temp_ws/src/turtlebot3_simulations"]
+	path = temp_ws/src/turtlebot3_simulations
+	url = git@github.com:ROBOTIS-GIT/turtlebot3_simulations.git
+[submodule "temp_ws/src/gym-gazebo"]
+	path = temp_ws/src/gym-gazebo
+	url = git@github.com:erlerobot/gym-gazebo.git
+[submodule "temp_ws/src/motion-planner-reinforcement-learning"]
+	path = temp_ws/src/motion-planner-reinforcement-learning
+	url = git@github.com:m5823779/motion-planner-reinforcement-learning.git	
