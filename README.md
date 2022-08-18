@@ -13,3 +13,7 @@ Instructions to run the simulation are in the respective workspace directory
 | `ur5_ws`   | Genetic Algorithm | [Link](https://youtu.be/RMHcwaTtvLg) |
 | `spot_ws`  | RRT | [Link](https://youtu.be/_KD_2IsWslM) |
 | `driving_ws` | Frenet Frames | [Link](https://youtu.be/DhP3jiC9YX0) |
+
+Change permission for python scripts:
+  cd Robotics-Playground
+  find . -name *.py -exec chmod +x {} \;
