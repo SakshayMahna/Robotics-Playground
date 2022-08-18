@@ -15,5 +15,6 @@ Instructions to run the simulation are in the respective workspace directory
 | `driving_ws` | Frenet Frames | [Link](https://youtu.be/DhP3jiC9YX0) |
 
 Change permission for python scripts:
-  cd Robotics-Playground
-  find . -name *.py -exec chmod +x {} \;
+
+    cd Robotics-Playground
+    find . -name *.py -exec chmod +x {} \;
