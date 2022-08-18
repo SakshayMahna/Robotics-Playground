@@ -10,6 +10,12 @@
 [submodule "spot_ws/src/yocs_velocity_smoother"]
 	path = spot_ws/src/yocs_velocity_smoother
 	url = git@github.com:chvmp/yocs_velocity_smoother.git
+[submodule "spot_ws/src/champ_setup_assistant"]
+	path = spot_ws/src/champ_setup_assistant
+	url = git@github.com:chvmp/champ_setup_assistant.git
+[submodule "spot_ws/src/robots"]
+	path = spot_ws/src/robots
+	url = git@github.com:chvmp/robots.git
 [submodule "baxter_ws/src/baxter_common"]
 	path = baxter_ws/src/baxter_common
 	url = git@github.com:RethinkRobotics/baxter_common.git
