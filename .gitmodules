@@ -58,3 +58,6 @@
 [submodule "temp_ws/src/motion-planner-reinforcement-learning"]
 	path = temp_ws/src/motion-planner-reinforcement-learning
 	url = git@github.com:m5823779/motion-planner-reinforcement-learning.git	
+[submodule "driving_ws/src/Frenet_Planner_Simulation/car_demo"]
+	path = driving_ws/src/Frenet_Planner_Simulation/car_demo
+	url = git@github.com:osrf/car_demo.git

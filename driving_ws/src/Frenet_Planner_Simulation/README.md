@@ -29,7 +29,11 @@ Heuristics based planners sort all these quite easily. But in cases of time spar
 - ROS [Kinetic](http://wiki.ros.org/kinetic/Installation/Ubuntu)/[Melodic](http://wiki.ros.org/melodic/Installation/Ubuntu)
  - Gazebo [8/9](https://medium.com/@abhiksingla10/setting-up-ros-kinetic-and-gazebo-8-or-9-70f2231af21a)
  - car_demo [8](https://drive.google.com/open?id=1c7gM1AfW6i5L6ZNBFWT8nnvKydPoz3C-)/[9](https://github.com/osrf/car_demo)
-
+ For Ubuntu 20, modify the CMakeLists.txt in the car_demo package to the following:
+```
+find_package(gazebo 11 REQUIRED)
+find_package(ignition-math6 REQUIRED) 
+```
 ### Running Instructions
 The following commands are to be run from your terminal:
     $ roscore
