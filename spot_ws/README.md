@@ -38,13 +38,13 @@ roslaunch spot_config gazebo.launch robot_name:=spot rviz:=true
 4. Keep the previous terminal running, and open a new terminal. Source the files, as given in 2. Then, start the Path Planning Node for Spot, and keep the terminal running. The RViz visualization window showing the robot in the same environment would show up.
 
 ```bash
-roslaunch global_path_planning champ_world.launch
+roslaunch global_path_planning champ_world.launch robot_name:=spot
 ```
 
 5. Keep the previous terminal running, and open a new terminal. Source the files, as given in 2. Then, start the Path Planning Server. To check if the code is running properly. Check the second terminal, in which the Path Planning Node is running. On correct execution, after some time, the log `odom received!` should be visible.
 
 ```bash
-rosrun global_path_planning path_planning_server.py
+roslaunch global_path_planning path_planning_server.launch robot_name:=spot
 ```
 
 6. In the RViz window, select the 2D Nav Goal button and select the goal position on the map. The orientation can be set while selecting the goal position and dragging the cursor. On setting the position, the visualization of the selected path planning algorithm would start.
