@@ -1,9 +1,29 @@
 # Robotics-Playground
 Playground to benchmark algorithms on Robot Simulations.
 
-The repository contains code used in the video series: Motion Planning for Robots. Click [here](https://youtube.com/playlist?list=PL0sla3wvhSnYNAyp0-OQmTMyO2POZRSe-) to go the playlist.
+## Usage
 
-# Contents
+Initialize git submodules:
+
+    cd Robotics-Playground
+    git submodule update --init --recursive    
+        
+Let git ignore permission changes within the repo:
+
+    git submodule foreach --recursive git config core.filemode false
+    
+Change permission for python scripts:
+
+    find . -name *.py -exec chmod +x {} \;
+   
+Install ROS dependency in a certain ws:
+
+    cd <certain_ws>
+    rosdep install --from-paths src --ignore-src -r -y
+
+## Tutorials
+
+The repository contains code used in the video series: Motion Planning for Robots. Click [here](https://youtube.com/playlist?list=PL0sla3wvhSnYNAyp0-OQmTMyO2POZRSe-) to go the playlist.
 
 Instructions to run the simulation are in the respective workspace directory
 
@@ -14,22 +34,3 @@ Instructions to run the simulation are in the respective workspace directory
 | `spot_ws`  | RRT | [Link](https://youtu.be/_KD_2IsWslM) |
 | `driving_ws` | Frenet Frames | [Link](https://youtu.be/DhP3jiC9YX0) |
 
-Initialize git submodules:
-
-    cd Robotics-Playground
-    git submodule update --init --recursive
-    
-Install ROS dependency from a certain ws:
-
-    cd <certain_ws>
-    rosdep install --from-paths src --ignore-src -r -y
-
-Change permission for python scripts:
-
-    cd Robotics-Playground
-    find . -name *.py -exec chmod +x {} \;
-    
-To let git ignore permission changes within the repo:
-
-    cd Robotics-Playground
-    git config core.fileMode false
