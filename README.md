@@ -7,14 +7,14 @@ Initialize git submodules:
 
     cd Robotics-Playground
     git submodule update --init --recursive    
-        
-Let git ignore permission changes within the repo:
-
-    git submodule foreach --recursive git config core.filemode false
     
 Change permission for python scripts:
 
     find . -name *.py -exec chmod +x {} \;
+        
+Let git ignore permission changes within the repo:
+
+    git submodule foreach --recursive git config core.filemode false
    
 Install ROS dependency in a certain ws:
 
