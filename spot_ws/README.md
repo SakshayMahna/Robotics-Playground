@@ -32,7 +32,7 @@ cd/src/robots
 3. Start the Spot simulation, and keep the terminal running. The Gazebo window showing the Spot Robot in an environment would open.
 
 ```bash
-roslaunch spot_config gazebo.launch
+roslaunch spot_config gazebo.launch robot_name:=spot rviz:=true
 ```
 
 4. Keep the previous terminal running, and open a new terminal. Source the files, as given in 2. Then, start the Path Planning Node for Spot, and keep the terminal running. The RViz visualization window showing the robot in the same environment would show up.
