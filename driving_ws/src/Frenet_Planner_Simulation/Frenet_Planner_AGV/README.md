@@ -1,6 +1,10 @@
 # Frenet_Planner_AGV
 This repository improves upon the work done previously on the sampling based planners in frenet frame. The improvements were done by [Parv Maheshwari](https://github.com/Parv-Maheshwari), [Animesh Jha](https://github.com/anime-sh), [Rohit Ranjan](https://github.com/thefurorjuror), [Himadri Bhatka](https://github.com/sirmisscriesalot) and [Aayush Jain](https://github.com/Aayush-Jain01).
 
+[Original repository](https://github.com/anime-sh/Frenet_Planner_AGV)
+
+In this version, we remove the ROS2 version.
+
 ## Changes and improvements
 ### Version 2.0 
 #### Contributors
