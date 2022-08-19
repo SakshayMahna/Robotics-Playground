@@ -6,7 +6,7 @@ Playground to benchmark algorithms on Robot Simulations.
 Initialize git submodules:
 
     cd Robotics-Playground
-    git submodule update --init --recursive    
+    git submodule update --init --recursive
     
 Change permission for python scripts:
 
