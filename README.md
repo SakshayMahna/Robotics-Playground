@@ -14,6 +14,7 @@ Change permission for python scripts:
         
 Let git ignore permission changes within the repo:
 
+    git config core.filemode false
     git submodule foreach --recursive git config core.filemode false
    
 Install ROS dependency in a certain ws:
