@@ -1,0 +1,10 @@
+<launch>
+    <arg name="robot_name" default="/"/>
+    
+    <arg if="$(eval arg('robot_name') == '/')"  name="frame_prefix" value="" />
+    <arg unless="$(eval arg('robot_name') == '/')" name="frame_prefix" value="$(arg robot_name)/" />
+
+    <group ns="$(arg robot_name)">
+        <node pkg="global_path_planning" name="path_planning_server" type="path_planning_server.py" />
+    </group>
+</launch>
